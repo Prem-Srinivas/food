@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bellam Gavvalu - Product Page</title>
+  <link rel="stylesheet" href="sweet1.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="product">
+      <img src="https://tse4.mm.bing.net/th?id=OIP.ainbDHwXBM1TlY28KyBUiwHaHa&pid=Api&P=0&h=180" alt="Dry Fruit Pootharekulu" class="product-image" />
+      <div class="product-details">
+        <h1>Bellam Gavvalu Original Godavari Recipe</h1>
+        <p class="rating">★★★★★ <span>12 reviews</span></p>
+        <p class="price" id="price">Rs. 450.00</p>
+        <p class="shipping">Shipping calculated at checkout.</p>
+        
+        <label for="weight">Weight</label>
+        <select id="weight" name="weight" onchange="updatePrice()">
+          <option value="450">250 gms - Rs. 450.00</option>
+          <option value="750">500 gms - Rs. 750.00</option>
+          <option value="1500">1 kg - Rs. 1500.00</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" />
+
+        <a href="cart.html" class="Add to cart">Add to cart</button> ></a>
+        
+
+        <h3>Product Description</h3>
+        <p>Taste the Tradition: These days, when people are racing to make a living, they tend to forget about their roots. It is in this context that Godavari Vantillu offers you an authentic Andhra sweet, Thapeswaram Madatha Kaja. </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updatePrice() {
+      const weightSelect = document.getElementById('weight');
+      const priceDisplay = document.getElementById('price');
+      const selectedPrice = weightSelect.value;
+      priceDisplay.textContent = `Rs. ${selectedPrice}.00`;
+    }
+  </script>
+</body>
+</html>
+ .>?

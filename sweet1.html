@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bellam Gavvalu - Product Page</title>
+  <link rel="stylesheet" href="sweet1.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="product">
+      <img src="https://southindianstore.com/wp-content/uploads/2020/11/bellam-gavvalu.jpg" alt="Bellam Gavvalu" class="product-image" />
+      <div class="product-details">
+        <h1>Bellam Gavvalu Original Godavari Recipe</h1>
+        <p class="rating">★★★★★ <span>12 reviews</span></p>
+        <p class="price" id="price">Rs. 140.00</p>
+        <p class="shipping">Shipping calculated at checkout.</p>
+        
+        <label for="weight">Weight</label>
+        <select id="weight" name="weight" onchange="updatePrice()">
+          <option value="140">250 gms - Rs. 140.00</option>
+          <option value="260">500 gms - Rs. 260.00</option>
+          <option value="500">1 kg - Rs. 500.00</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" />
+
+        <a href="cart.html" class="Add to cart">Add to cart</button> ></a>
+        
+
+        <h3>Product Description</h3>
+        <p>Taste of Andhra's Authentic sweets: Godavari Vantillu is a brand that offers you an original Andhra special sweet, Bellam Gavvalu, made from the recipes passed down from our descendants. Order some for yourself or your loved ones!</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function updatePrice() {
+      const weightSelect = document.getElementById('weight');
+      const priceDisplay = document.getElementById('price');
+      const selectedPrice = weightSelect.value;
+      priceDisplay.textContent = `Rs. ${selectedPrice}.00`;
+    }
+  </script>
+</body>
+</html>

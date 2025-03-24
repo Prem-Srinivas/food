@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="cart sweet1.css" />
+  <script>
+    function updatePrice() {
+      const weight = document.getElementById('weight').value;
+      const quantity = parseInt(document.getElementById('quantity').value);
+      let pricePerUnit = 140.00;
+
+      if (weight === '500g') pricePerUnit = 250.00;
+      else if (weight === '1kg') pricePerUnit = 480.00;
+
+      const totalPrice = pricePerUnit * quantity;
+      document.getElementById('total-price').innerText = `Rs. ${totalPrice.toFixed(2)}`;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Your Cart</h1>
+    <div class="cart-item">
+      <img src="https://southindianstore.com/wp-content/uploads/2020/11/bellam-gavvalu.jpg" alt="Bellam Gavvalu" class="cart-image" />
+      <div class="item-details">
+        <h2>Bellam Gavvalu Original Godavari Recipe</h2>
+        
+        <label for="weight">Weight:</label>
+        <select id="weight" name="weight" onchange="updatePrice()">
+          <option value="250g">250 gms - Rs. 140.00</option>
+          <option value="500g">500 gms - Rs. 250.00</option>
+          <option value="1kg">1 kg - Rs. 480.00</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" onchange="updatePrice()" />
+
+        <p>Total: <span id="total-price">Rs. 140.00</span></p>
+      </div>
+    </div>
+    <button class="checkout">Proceed to Checkout</button>
+  </div>
+</body>
+</html>
